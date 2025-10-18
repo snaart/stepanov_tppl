@@ -1,6 +1,6 @@
 import pytest
 
-from plib import Point
+from plib.plib import Point
 
 
 @pytest.fixture
