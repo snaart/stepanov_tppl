@@ -98,3 +98,7 @@ python3 ../integration_tests.py ./cow_app
 #### 📊 Покрытие кода (Coverage)
 
 99.9% )
+
+### Pascal Interpreter
+
+#### [Ссылка на отдельный readme.md](pascal/readme.md)

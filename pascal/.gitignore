@@ -1,0 +1,28 @@
+# Build directories
+build/
+cmake-build-debug/
+CMakeFiles/
+_deps/
+
+# CMake artifacts
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+Testing/
+*.cmake
+
+# IDE settings
+.idea/
+.vscode/
+
+# Binaries
+/pascal
+/test_pascal
+/test_integration
+*.o
+*.a
+*.dylib
+
+# System
+.DS_Store

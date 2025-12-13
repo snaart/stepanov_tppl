@@ -1,0 +1,2 @@
+PROGRAM Test; BEGIN
+END.
