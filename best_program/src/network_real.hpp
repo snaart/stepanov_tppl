@@ -37,7 +37,6 @@ public:
             throw std::runtime_error("Socket Creation Error");
         }
 
-        // ВАЖНО: Таймауты на "висящий" кабель
         struct timeval tv;
         tv.tv_sec = TIMEOUT_SEC;
         tv.tv_usec = 0;

@@ -46,7 +46,7 @@ uint8_t calc_sum_for_test(const std::vector<uint8_t>& data) {
     return static_cast<uint8_t>(sum);
 }
 
-// --- PROTOCOL TESTS (100% Coverage) ---
+// --- PROTOCOL TESTS ---
 
 TEST(Protocol, Checksum) {
     // Входящий пакет: 1, 2, 3. Функция должна посчитать 1+2 = 3.
@@ -175,7 +175,7 @@ TEST(Worker, ChecksumMismatch) {
         EXPECT_CALL(*net, send_all("get"));
         EXPECT_CALL(*net, recv_exact(15)).WillOnce(Return(pkt));
 
-        // write_line НЕ вызывается (StrictMock это проверит)
+        // write_line не вызывается
 
         EXPECT_CALL(*net, send_all("get"))
             .WillOnce(InvokeWithoutArgs([&](){

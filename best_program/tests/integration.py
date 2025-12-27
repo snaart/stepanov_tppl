@@ -6,7 +6,7 @@ import signal
 print("--- BUILDING ---")
 subprocess.check_call(["cmake", "--build", "build"])
 
-CLIENT_EXE = "./build/collector" # Проверьте путь после сборки!
+CLIENT_EXE = "./build/collector"
 SERVER_SCRIPT = "tests/mock_server.py"
 
 def start_server(port, mode="normal"):
@@ -17,8 +17,6 @@ srv = start_server(5123)
 # Заглушка для второго порта, чтобы клиент не спамил ошибками
 srv2 = start_server(5124)
 
-# Запускаем клиент (в main.cpp адрес должен быть 127.0.0.1 для этого теста!)
-# ВНИМАНИЕ: Для интеграционного теста в main.cpp нужно сменить IP на "127.0.0.1"
 client = subprocess.Popen([CLIENT_EXE])
 
 time.sleep(2)
@@ -42,7 +40,7 @@ if os.path.exists("data.txt"):
 else:
     print("FAIL: No file")
 
-print("--- TEST 2: SIGKILL (Nuclear power off) ---")
+print("--- TEST 2: SIGKILL ---")
 os.kill(client.pid, signal.SIGKILL)
 print("Client Killed.")
 

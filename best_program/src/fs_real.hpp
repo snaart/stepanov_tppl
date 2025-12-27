@@ -10,7 +10,6 @@ class RealFileSystem : public IFileSystem {
     std::mutex mtx;
 public:
     RealFileSystem(const std::string& filename) {
-        // O_DSYNC/O_SYNC может отсутствовать на Mac, используем fsync вручную
         fd = open(filename.c_str(), O_WRONLY | O_CREAT | O_APPEND, 0644);
         if (fd < 0) {
             std::cerr << "CRITICAL: Cannot open " << filename << std::endl;
@@ -40,7 +39,6 @@ public:
             written += res;
         }
 
-        // --- ГАРАНТИЯ СОХРАНЕНИЯ ПРИ ВЫКЛЮЧЕНИИ ПИТАНИЯ ---
         fsync(fd);
 
         std::cout << line << std::endl;

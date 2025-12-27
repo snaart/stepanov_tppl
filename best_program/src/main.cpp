@@ -17,11 +17,8 @@ int main() {
     signal(SIGINT, signal_handler);
     signal(SIGTERM, signal_handler);
 
-    // Абсолютный путь, чтобы найти файл!
-    // Замените на свой путь, если нужно
     std::string path = "data.txt";
 
-    // Единый логгер (потокобезопасный внутри)
     auto fs = std::make_shared<RealFileSystem>(path);
 
     // Создаем воркеров

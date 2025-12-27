@@ -31,14 +31,13 @@ while True:
             if not req: break
 
             if MODE == "hang_data":
-                time.sleep(10) # Client should timeout here
+                time.sleep(10)
                 break
 
-            # Packet generation
             ts = struct.pack(">q", int(time.time()*1000000))
-            if PORT == 5123: # Type 1
+            if PORT == 5123:
                 payload = ts + struct.pack(">fh", 25.5, 100)
-            else: # Type 2
+            else:
                 payload = ts + struct.pack(">iii", 10, 20, 30)
 
             chk = sum(payload) % 256
