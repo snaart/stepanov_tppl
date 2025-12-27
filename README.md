@@ -102,3 +102,7 @@ python3 ../integration_tests.py ./cow_app
 ### Pascal Interpreter
 
 #### [Ссылка на отдельный readme.md](pascal/readme.md)
+
+### Best Program
+
+#### [Ссылка на отдельный readme.md](best_program/readme.md)
